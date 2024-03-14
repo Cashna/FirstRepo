@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
 
 const axios = require('axios');
 async function getData() {
-  const date = new Date().toLocaleString('sv').replace(/\D/g, '').slice(0,8);
+  const date = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo',year: "numeric",month: "2-digit",day: "2-digit"}).replaceAll('/','');
   const res = await axios.get('https://api.abema.io/v1/media?dateFrom=' + date + '&dateTo=' + date, {
       headers: {
         'Authorization': 'Bearer ' + process.env.accesstoken
