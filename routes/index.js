@@ -194,8 +194,4 @@ app.get('/channels/keirin-auto', async (req, res) => {
   res.send(obj);
 });
 
-app.listen(3000, () => {
-  console.log('server started');
-});
-
 module.exports = app;
