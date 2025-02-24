@@ -495,49 +495,5 @@ app.get('/channels/baseball-anime', async (req, res) => {
   const comment = await getComment(JSON.parse(idObj).id);
   res.send(comment);
 });
-app.get('/channels/isekai-anime', async (req, res) => {
-  const rest = await getData();
-  const obj = rest.channelSchedules.filter(x => x.channelId === 'isekai-anime');
-  var date = new Date();
-  var unixTimestamp = Math.floor(date.getTime() / 1000 );
-  const slotsObj = JSON.stringify(obj).slice(1).slice(0,-1);
-  const filSlots = JSON.parse(slotsObj).slots.filter(x => x.startAt <= unixTimestamp && x.endAt >= unixTimestamp);
-  const idObj = JSON.stringify(filSlots).slice(1).slice(0, -1);
-  const comment = await getComment(JSON.parse(idObj).id);
-  res.send(comment);
-});
-app.get('/channels/lovecomedy-anime', async (req, res) => {
-  const rest = await getData();
-  const obj = rest.channelSchedules.filter(x => x.channelId === 'lovecomedy-anime');
-  var date = new Date();
-  var unixTimestamp = Math.floor(date.getTime() / 1000 );
-  const slotsObj = JSON.stringify(obj).slice(1).slice(0,-1);
-  const filSlots = JSON.parse(slotsObj).slots.filter(x => x.startAt <= unixTimestamp && x.endAt >= unixTimestamp);
-  const idObj = JSON.stringify(filSlots).slice(1).slice(0, -1);
-  const comment = await getComment(JSON.parse(idObj).id);
-  res.send(comment);
-});
-app.get('/channels/dailylife-anime', async (req, res) => {
-  const rest = await getData();
-  const obj = rest.channelSchedules.filter(x => x.channelId === 'dailylife-anime');
-  var date = new Date();
-  var unixTimestamp = Math.floor(date.getTime() / 1000 );
-  const slotsObj = JSON.stringify(obj).slice(1).slice(0,-1);
-  const filSlots = JSON.parse(slotsObj).slots.filter(x => x.startAt <= unixTimestamp && x.endAt >= unixTimestamp);
-  const idObj = JSON.stringify(filSlots).slice(1).slice(0, -1);
-  const comment = await getComment(JSON.parse(idObj).id);
-  res.send(comment);
-});
-app.get('/channels/late-night-anime', async (req, res) => {
-  const rest = await getData();
-  const obj = rest.channelSchedules.filter(x => x.channelId === 'late-night-anime');
-  var date = new Date();
-  var unixTimestamp = Math.floor(date.getTime() / 1000 );
-  const slotsObj = JSON.stringify(obj).slice(1).slice(0,-1);
-  const filSlots = JSON.parse(slotsObj).slots.filter(x => x.startAt <= unixTimestamp && x.endAt >= unixTimestamp);
-  const idObj = JSON.stringify(filSlots).slice(1).slice(0, -1);
-  const comment = await getComment(JSON.parse(idObj).id);
-  res.send(comment);
-});
 
 module.exports = app;
